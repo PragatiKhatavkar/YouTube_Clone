@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#top_nav {
+  width: 100%;
+  height: 12%;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 14px;
+}
+
+#yt_logo{
+  cursor: pointer;
+}
+
+.top_nav_sections {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hamburger_menu , #create_videos , #notifications , #search_mic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    margin: 0px 14px 0px 4px;
+}
+
+#hamburger_menu > span , #create_videos > span , #notifications > span , #search_mic > span{ 
+    background-color: transparent;
+}
+
+#hamburger_menu:hover , #create_videos:hover , #notifications:hover{
+    background-color: rgb(38, 38, 38);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#user_logo{
+    border-radius: 50%;
+    padding: 8px 13px;
+    margin: 0px 14px 0px 4px;
+    background-color: rgb(48, 90, 188);
+    cursor: pointer;
+}
+
+#search_mic{
+    background-color: gray;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#search_mic:hover{
+    background-color: red;
+}
+
+#left_nav {
+  width: 6%;
+  height: 88%;
+  position: sticky;
+  left: 0px;
+  top: 12%;
+  height: 88vh;
+}
+
+.left_nav_icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 18px 0px;
+  margin: 10%;
+}
+
+.left_nav_icon:hover {
+  background-color: rgb(38, 38, 38);
+  border-radius: 10px;
+}
+
+.left_nav_icon > span {
+  font-size: 26px;
+  background-color: transparent;
+}
+
+.left_nav_icon > p {
+  width: fit-content;
+  font-size: 10px;
+  background-color: transparent;
+}
+
+#top_nav_section2{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#search_bar > input{
+    border: 1px solid gray;
+    height: 36px;
+    width: 40vw;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    padding: 16px;
+    font-size: 14px;
+}
+
+#search_bar > input:focus{
+    outline: 0px;
+    border: 1px solid blue;
+}
+
+#search_icon{
+    background-color: gray;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    cursor: pointer;
+}
+
+#search_icon > span{
+    background-color: transparent;
+    padding: 6px 14px;
+}
+
+#top_nav_section3{
+    width: 12%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#body_container {
+  display: flex;
+}
+
+#scrollable_suggestions {
+  display: flex;
+  overflow-x: scroll;
+  width: 92vw;
+  white-space: nowrap;
+}
+
+#scrollable_suggestions::-webkit-scrollbar {
+  display: none;
+}
+
+#scrollable_suggestions > div {
+  padding: 6px;
+  background-color: rgb(49, 49, 49);
+  border-radius: 4px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#scrollable_suggestions > div:first-child{
+ background-color: white;
+ color: black;
+}
+
+
+/* JS Created Elements */
+
+.video{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#video-wrapper{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.video{
+  height: 280px;
+  width: 380px;
+}
+
+.video-details{
+  display: flex;
+  justify-content: space-between;
+}
+
+.video-content > img{
+  width: 360px;
+  height: 200px;
+  border-radius: 20px;
+}
+
+
+.channel-logo > img{
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.title{
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.channel-name{
+  font-size: 10px;
+}
+
+
+/* Video Render CSS  */
+
+#video-container{
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#videoFrame > iframe{
+  width: 90%;
+  height: 60vh;
+}
+
+.thumbnail{
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+}
+
+#videoTitle{
+  font-size: 18px;
+}
+
+.videoDescriptionTable{
+  padding: 10px;
+  background-color: rgb(43, 43, 43);
+  border-radius: 10px;
+}
+
+.videoDescription{
+  height: 12vh;
+  overflow-y: scroll;
+  background-color: rgb(43, 43, 43);
+}
+
+.videoDescription > span{
+  background-color: rgb(43, 43, 43);
+}
+
+.videoDescription > span:first-child{
+  font-weight: 800;
+}
+
+
+.videoDescription::-webkit-scrollbar{
+  display: none;
+}
+
+

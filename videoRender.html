@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div>
+      <div id="video-container"></div>
+    </div>
+
+    <script>
+      const embedHtml = sessionStorage.getItem("videoEmbededHtml");
+      const stats = sessionStorage.getItem("stats");
+      let parseStats = JSON.parse(stats);
+
+      const channel = sessionStorage.getItem("channelbanner");
+      let parseChannel = JSON.parse(channel);
+
+      if (embedHtml) {
+        const playerContainer = document.createElement("div");
+        playerContainer.innerHTML =  embedHtml;
+
+        playerContainer.innerHTML = ` 
+          <div id="videoFrame">${embedHtml}</div>
+          <div id="videoTitle">${parseStats.videoTitle}</div>
+          <div class="video-details">
+            <img class="thumbnail" src="${parseChannel.channelLogo}" alt="thumbnail">
+            <div class = "channel-details">
+              <div>${parseChannel.channelTitle}</div>
+              <div>${parseStats.subscriberCount}</div>
+            </div class = "likeCount">
+            <div>${parseStats.likeCount}</div>
+          </div>
+          <div class = "videoDescriptionTable">
+            <div class = "videoDescription">
+              <span>${parseStats.viewCount} views </span> <span> ${parseStats.videoPublishedAt} </span> <span>${parseStats.videoTags} ${parseStats.videoDescription}</span>
+            </div>
+          </div>
+        `;
+
+        document.getElementById("video-container").append(playerContainer);
+      } else {
+        console.log("NA");
+      }
+    </script>
+  </body>
+</html>
